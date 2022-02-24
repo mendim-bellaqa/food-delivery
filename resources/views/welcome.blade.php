@@ -23,8 +23,8 @@
                 <a href="#contact" class="py-2 px-5">Contact</a>
             </div>
             <div class="ml-auto font-bold">
-                <a href="#" class="py-2 px-5">Login</a>
-                <a href="#" class="font-bold rounded-full bg-gray-100 py-2 px-5 ml-2">Sign Up</a>
+                <a href="/login" class="py-2 px-5">Login</a>
+                <a href="/register" class="font-bold rounded-full bg-gray-100 py-2 px-5 ml-2">Sign Up</a>
             </div>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-12">
@@ -79,8 +79,7 @@
             </a>
         </div><br><br><br>
     </div>
-    <!--main end-->
-    <!--contact start--><br><br><br>
+    <br><br><br>
     <div class="bottom-0 left-0 right-0 bg-orange-300 py-20 text-center" id="contact">
         <span class="mt-12 font-bold text-5xl">SEND US A MESSAGE</span>
         <form class="mt-10 w-1/2 mx-auto">
