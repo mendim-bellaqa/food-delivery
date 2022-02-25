@@ -1,7 +1,9 @@
 @extends('admin.products.layout')
 
 @section('content')
-    {{-- <div class="row">
+
+
+    <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="justify-center text-center mt-10 mb-10">
                 <h2>All products ready to be delivered</h2>
@@ -51,6 +53,6 @@
         @endforeach
     </table>
 
-    {!! $products->links() !!} --}}
+    {!! $products->links() !!}
 
 @endsection

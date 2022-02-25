@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminProductController;
 
@@ -37,4 +38,7 @@ Route::resource('products', ProductController::class);
 // ADMIN Routes
 
 
-Route::apiResource('admin/products', AdminProductController::class);
+Route::apiResource('admin/dashboard', AdminController::class);
+
+
+Route::resource('admin/dashboard/products', AdminProductController::class);

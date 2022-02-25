@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\AdminProductController;
 
 class AdminProductController extends Controller
@@ -16,15 +18,10 @@ class AdminProductController extends Controller
     public function index()
     {
         $products = Product::latest()->paginate(5);
-
-        return view('admin.products.index',compact('products'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-    }
-
-    public function layout()
-    {
-
-        return view('admin.products.layout');
+        $userCount = DB::table('users')->count();
+        $countproducts = DB::table('products')->count();
+        return view('admin.products.index',
+        compact('products', 'userCount','countproducts'));
     }
 
     /**
@@ -68,6 +65,7 @@ class AdminProductController extends Controller
     {
         return view('admin.products.show',compact('product'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -114,4 +112,8 @@ class AdminProductController extends Controller
         return redirect()->route('admin.products.index')
                         ->with('success','Product deleted successfully');
     }
+    public function users() {
+        $userCount = User::count();
+        return view('admin.users', compact('userCount'));
+  }
 }

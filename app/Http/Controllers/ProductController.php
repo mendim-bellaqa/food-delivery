@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -105,4 +106,9 @@ class ProductController extends Controller
         return redirect()->route('products.index')
                         ->with('success','Product deleted successfully');
     }
+
+    public function users() {
+        $userCount = User::count();
+        return view('admin.products.layout', compact('userCount'));
+  }
 }
