@@ -23,6 +23,7 @@
                 <a href="#contact" class="py-2 px-5">Contact</a>
             </div>
             <div class="ml-auto font-bold">
+                <a href="/admin/products" class="py-2 px-5">Dashboard</a>
                 <a href="/login" class="py-2 px-5">Login</a>
                 <a href="/register" class="font-bold rounded-full bg-gray-100 py-2 px-5 ml-2">Sign Up</a>
             </div>
