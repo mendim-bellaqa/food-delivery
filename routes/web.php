@@ -39,6 +39,8 @@ Route::resource('products', ProductController::class);
 
 
 Route::apiResource('admin/dashboard', AdminController::class);
-
-
 Route::resource('admin/dashboard/products', AdminProductController::class);
+Route::get('/admin/all-users', [AdminController::class, 'showAllUsers']);
+
+
+

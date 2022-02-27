@@ -32,4 +32,10 @@ class AdminController extends Controller
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+    public function showAllUsers()
+    {
+        $users = DB::table('users')->get();
+        return view('admin.all-users',compact('users'));
+    }
+
 }
