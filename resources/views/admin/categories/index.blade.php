@@ -11,8 +11,20 @@
             <div class="justify-center text-center mb-5">
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
             </div>
+
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('categories.index') }}">{{ __('Categories') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('categories.create') }}">{{ __('Create category') }}</a>
+                </li>
+            </ul>
+
         </div>
     </div>
+
+
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -29,19 +41,19 @@
             <th>Value</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($products as $product)
+        @foreach ($categories as $category)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $product->name }}</td>
-            <td>{{ $product->detail }}</td>
-            <td>{{ $product->type }}</td>
-            <td>{{ $product->value }}</td>
+            <td>{{ $category->name }}</td>
+            <td>{{ $category->detail }}</td>
+            <td>{{ $category->type }}</td>
+            <td>{{ $category->value }}</td>
             <td>
-                <form action="{{ route('products.destroy',$product->id) }}" method="POST">
+                <form action="{{ route('categories.destroy',$product->id) }}" method="POST">
 
-                    <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('categories.show',$category->id) }}">Show</a>
 
-                    <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('categories.edit',$category->id) }}">Edit</a>
 
                     @csrf
                     @method('DELETE')

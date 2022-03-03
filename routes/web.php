@@ -34,7 +34,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('products', ProductController::class);
 
-Route::resource('categories', CategoryController::class);
+Route::get('/pizza', function () {
+    return view('admin.products.pizza');
+});
+
+
+Route::resource('admin/categories', CategoryController::class);
 
 
 // ADMIN Routes
@@ -43,6 +48,10 @@ Route::resource('categories', CategoryController::class);
 Route::apiResource('admin/dashboard', AdminController::class);
 Route::resource('admin/dashboard/products', AdminProductController::class);
 Route::get('/admin/all-users', [AdminController::class, 'showAllUsers']);
+
+
+
+
 
 
 

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+    namespace App\Http\Controllers;
 
-use App\Category;
-use Illuminate\Http\Request;
-use App\Http\Controllers\CategoryController;
-use App\Http\Requests\CreateCategoryRequest;
+    use App\Models\Product;
+    use Illuminate\Http\Request;
+    use Illuminate\Support\Facades\DB;
+    use App\Http\Controllers\CategoryController;
+
 
 class CategoryController extends Controller
 {
@@ -17,7 +18,7 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         $categories = Category::all();
-        return view('categories.index')->with(compact(['categories']));
+        return view('admin.categories.index')->with(compact(['categories']));
     }
 
     /**
@@ -28,7 +29,7 @@ class CategoryController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('categories.create')->with(compact(['categories']));
+        return view('admin.categories.create')->with(compact(['categories']));
     }
 
     /**
@@ -44,7 +45,7 @@ class CategoryController extends Controller
         $category->parent_id = $request->parent_category ? $request->parent_category : 0;
 
         if ($category->save() ) {
-            return redirect()->route('categories.index')->with(['success' => 'Category added successfully.']);
+            return redirect()->route('admin.categories.index')->with(['success' => 'Category added successfully.']);
         }
 
         return redirect()->back()->with(['fail' => 'Unable to add category.']);
@@ -59,7 +60,7 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         $categories = Category::all();
-        return view('categories.edit')->with(compact(['category', 'categories']));
+        return view('admin.categories.edit')->with(compact(['category', 'categories']));
     }
 
     /**
@@ -75,7 +76,7 @@ class CategoryController extends Controller
         $category->parent_id = $request->parent_category ? $request->parent_category : 0;
 
         if ($category->save() ) {
-            return redirect()->route('categories.index')->with(['success' => 'Category successfully updated.']);
+            return redirect()->route('admin.categories.index')->with(['success' => 'Category successfully updated.']);
         }
 
         return redirect()->back()->with(['fail' => 'Unable to update category.']);

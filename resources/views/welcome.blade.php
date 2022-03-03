@@ -48,7 +48,7 @@
             What's the mood?
         </div>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-12 font-bold text-center items-center text-lg">
-            <a href="#" class="my-3">
+            <a href="/" class="my-3">
                 <div class="bg-orange-300 rounded-full py-6 w-4/5 md:w-1/3 mx-auto">
                     <span class="bg-white p-4 rounded-full text-center"><i class="fas fa-carrot"></i></span>
                     <span class="block mt-5">Salad</span>
@@ -60,7 +60,7 @@
                     <span class="block mt-5">Burger</span>
                 </div>
             </a>
-            <a href="#" class="my-3">
+            <a href="/pizza" class="my-3">
                 <div class="bg-orange-300 rounded-full py-6 w-4/5 md:w-1/3 mx-auto">
                     <span class="bg-white p-4 rounded-full"><i class="fas fa-pizza-slice"></i></span>
                     <span class="block mt-5">Pizza</span>
